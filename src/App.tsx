@@ -5,10 +5,8 @@ import { ChatProvider } from './context/ChatContext';
 function App() {
   return (
     <ChatProvider>
-      <div className="font-sans">
-        <ChattingRoom />
-        {/* <Profile /> */}
-      </div>
+      <ChattingRoom />
+      {/* <Profile /> */}
     </ChatProvider>
   );
 }

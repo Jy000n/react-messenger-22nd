@@ -7,6 +7,7 @@ const Profile = () => {
     <div className="h-screen w-full bg-[#5E544E]">
       <StatusBar theme="brown" />
       <ProfileMenubar />
+      <div className="mt-auto flex h-[50%] border"></div>
       <UserProfile />
     </div>
   );

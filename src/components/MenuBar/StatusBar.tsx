@@ -23,7 +23,7 @@ const StatusBar = ({ theme = 'white' }: StatusBarProps) => {
   return (
     <>
       <div className="box-border flex w-full flex-row justify-between p-[16px] pb-[14px]">
-        <div className={`items-center pl-[24px] font-black`}>
+        <div className={`items-center pl-[24px] text-[17px] font-medium`}>
           <p className={theme === 'brown' ? 'text-white' : 'text-black'}>
             {formattedHour}:{formattedMinute}
           </p>

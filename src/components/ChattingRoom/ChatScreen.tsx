@@ -42,7 +42,7 @@ const ChatScreen = () => {
             <div key={msg.msgId} className={`px-[20px] py-[8px] ${isMine ? 'justify-end' : 'justify-start'}`}>
               {showDate && (
                 <div className="flex justify-center">
-                  <span className="mb-[3px] rounded-[1000px] bg-[#ECEEF0] px-[23px] py-[5px] text-center text-[9.5px] font-normal text-[#6F7173]">
+                  <span className="mb-[3px] rounded-[1000px] bg-[#ECEEF0] px-[24px] py-[4px] text-center text-[10px] font-normal text-[#6F7173]">
                     {formatDate(msg.sentAt)}
                   </span>
                 </div>
@@ -51,7 +51,7 @@ const ChatScreen = () => {
                 {!isMine && showProfileAndName && (
                   <img src={DefaultProfile} alt={msg.senderName} className="h-[44px] w-[44px] rounded-[6px]" />
                 )}
-                <div className={`flex flex-col text-[11px] ${isMine ? 'ml-auto items-end' : ''}`}>
+                <div className={`flex flex-col text-[12px] ${isMine ? 'ml-auto items-end' : ''}`}>
                   {!isMine && showProfileAndName && <span className="pt-[1px] font-semibold">{msg.senderName}</span>}
 
                   <div className={`${isMine ? 'mb-[-15px]' : showProfileAndName ? '' : 'mt-[-15px] ml-[54px]'}`}>
