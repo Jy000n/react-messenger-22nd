@@ -11,15 +11,16 @@ const isSameMinute = (d1: Date, d2: Date) => {
 
 const ChatScreen = () => {
   const { messages } = useChat();
-  const bottomRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // 스크롤 화면으로 아래로 자동 이동
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+    if (containerRef.current) {
+      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    }
+  });
 
   return (
-    <div>
+    <div ref={containerRef} className="scrollbar-hide h-[calc(100vh-100px)] overflow-y-auto">
       {messages.map((msg, idx) => {
         const isMine = msg.senderId === MY_ID;
         const prevMsg = idx > 0 ? messages[idx - 1] : null;
@@ -72,8 +73,6 @@ const ChatScreen = () => {
           </div>
         );
       })}
-      {/* 아래로 스크롤 내려줄 기준점 */}
-      <div ref={bottomRef} />
     </div>
   );
 };

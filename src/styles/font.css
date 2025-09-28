@@ -4,3 +4,53 @@
   font-weight: 100 900; /* 100~900 */
   font-display: swap; /* 폰트 로드되기 전까지 시스템 폰트 사용 */
 }
+
+/* @theme {
+  --text-title2-sb: 20px;
+  --text-title2-sb--line-height: 30px;
+  --text-title2-sb--font-weight: 600;
+  --text-title2-sb--list-spacing: 28px;
+  --text-title2-sb--letter-spacing: 0.4px;
+
+  --text-title1-sb: 16px;
+  --text-title1-sb--line-height: 24px;
+  --text-title1-sb--font-weight: 600;
+  --text-title1-sb--list-spacing: 28px;
+  --text-title2-sb--letter-spacing: 0.32px;
+
+  --text-title-sb: 14px;
+  --text-title-sb--line-height: 22px;
+  --text-title-sb--font-weight: 600;
+  --text-title-sb--list-spacing: 28px;
+  --text-title2-sb--letter-spacing: 0.28px;
+
+  --text-body-med: 14px;
+  --text-body-med--line-height: 22px;
+  --text-body-med--font-weight: 400;
+  --text-body-med--list-spacing: 28px;
+  --text-body-med--letter-spacing: 0.28px;
+
+  --text-body-sb: 12px;
+  --text-body-sb--line-height: 18px;
+  --text-body-sb--font-weight: 600;
+  --text-body-sb--list-spacing: 28px;
+  --text-body-sb--letter-spacing: 0.24px;
+
+  --text-body-reg: 12px;
+  --text-body-reg--line-height: 18px;
+  --text-body-reg--font-weight: 500;
+  --text-body-reg--list-spacing: 28px;
+  --text-body-reg--letter-spacing: 0.24px;
+
+  --text-caption1-reg: 12px;
+  --text-caption1-reg--line-height: 16px;
+  --text-caption1-reg--font-weight: 400;
+  --text-caption1-reg--list-spacing: 28px;
+  --text-caption1-reg--letter-spacing: 0.24px;
+
+  --text-caption2-reg: 10px;
+  --text-caption2-reg--line-height: 16px;
+  --text-caption2-reg--font-weight: 400;
+  --text-caption2-reg--list-spacing: 28px;
+  --text-caption2-reg--letter-spacing: 0.2px;
+} */
