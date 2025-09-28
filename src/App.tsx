@@ -1,5 +1,6 @@
 import ChattingRoom from './pages/ChattingRoom';
 // import Profile from './pages/Profile';
+// import FriendList from './pages/FriendList';
 import { ChatProvider } from './context/ChatContext';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <ChatProvider>
       <ChattingRoom />
       {/* <Profile /> */}
+      {/* <FriendList /> */}
     </ChatProvider>
   );
 }
