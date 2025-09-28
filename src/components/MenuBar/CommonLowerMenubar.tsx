@@ -6,7 +6,7 @@ import SeeMore from '@/assets/svgs/menubar/lower-menubar/see-more.svg';
 
 const CommonLowerMenubar = () => {
   return (
-    <div className="flex justify-between px-[20px]">
+    <div className="flex justify-between px-[30px]">
       <div className="cursor-pointer text-center">
         <img src={FriendListActive} alt="친구" className="h-[24px] w-[24px]" />
         <span className="text-[10px] text-[#7F4C2F]">친구</span>

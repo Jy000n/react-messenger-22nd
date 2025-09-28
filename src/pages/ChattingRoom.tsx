@@ -5,7 +5,7 @@ import ChatScreen from '@/components/ChattingRoom/ChatScreen';
 
 const ChattingRoom = () => {
   return (
-    <div className="flex h-screen flex-col">
+    <div className="flex h-full flex-col">
       <div>
         <StatusBar />
         <ChattingRoomHeader />

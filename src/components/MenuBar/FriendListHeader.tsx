@@ -5,7 +5,7 @@ import Settings from '@/assets/svgs/menubar/upper-menubar/settings-black.svg';
 
 const FriendListHeader = () => {
   return (
-    <div className="flex items-center justify-between px-[20px]">
+    <div className="mt-[-5px] flex items-center justify-between px-[20px]">
       <div className="text-[20px] font-semibold">친구</div>
       <div className="flex gap-[12px]">
         <img src={Search} alt="검색" className="h-[24px] w-[24px] cursor-pointer" />

@@ -13,7 +13,7 @@ const FriendList = () => {
       <div className="flex flex-1 flex-grow overflow-y-auto">
         <UserTab />
       </div>
-      <div className="pb-[34px]">
+      <div className="pb-[20px]">
         <MenuBar />
       </div>
     </div>

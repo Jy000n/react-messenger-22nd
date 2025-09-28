@@ -4,12 +4,12 @@ import UserProfile from '@/components/UserProfile/UserProfile';
 
 const Profile = () => {
   return (
-    <div className="flex h-screen w-full flex-col justify-between bg-[#5E544E]">
+    <div className="flex h-full w-full flex-col justify-between bg-[#5E544E]">
       <div>
         <StatusBar theme="brown" />
         <ProfileMenubar />
       </div>
-      <div className="mb-[34px]">
+      <div className="pb-[34px]">
         <UserProfile />
       </div>
     </div>
