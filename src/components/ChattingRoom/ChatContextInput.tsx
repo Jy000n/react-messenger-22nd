@@ -56,7 +56,7 @@ const ChattingContextInput = () => {
         <img
           src={Imoji}
           alt="imoji"
-          className={`h-[24px] w-[24px] cursor-pointer ${isHovered ? 'translate-x-[-13px]' : 'translate-x-[-11px]'}`}
+          className={`h-[24px] w-[24px] cursor-pointer ${isHovered ? 'translate-x-[-15px]' : 'translate-x-[-11px]'}`}
         />
       </div>
       <div>
