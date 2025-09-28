@@ -6,11 +6,13 @@ import Settings from '@/assets/svgs/menubar/upper-menubar/settings-white.svg';
 const ProfileMenubar = () => {
   return (
     <>
-      <div className="flex">
-        <img src={BeforeBtn} alt="before-btn" />
-        <img src={Shopping} alt="shopping" />
-        <img src={Scan} alt="scan" />
-        <img src={Settings} alt="settings" />
+      <div className="flex justify-between px-[20px]">
+        <img src={BeforeBtn} alt="before-btn" className="cursor-pointer" />
+        <div className="flex gap-[10px]">
+          <img src={Shopping} alt="shopping" className="cursor-pointer" />
+          <img src={Scan} alt="scan" className="cursor-pointer" />
+          <img src={Settings} alt="settings" className="cursor-pointer" />
+        </div>
       </div>
     </>
   );
