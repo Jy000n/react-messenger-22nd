@@ -47,7 +47,7 @@ const ChattingContextInput = () => {
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="메세지 입력"
-          className={`h-[36px] ${inputValue.trim() !== '' ? 'w-[236px]' : 'w-[275px]'} relative top-[-36px] left-[37px] rounded-[6px] bg-white pr-[40px] pl-[12px] placeholder-[#BABCBE] outline-none`}
+          className={`h-[36px] ${inputValue.trim() !== '' ? 'w-[236px]' : 'w-[279px]'} relative top-[-36px] left-[37px] rounded-[6px] bg-white pr-[40px] pl-[12px] placeholder-[#BABCBE] outline-none`}
         />
         <img
           src={Imoji}
