@@ -65,7 +65,7 @@ const ChatScreen = () => {
                   <div className={`${isMine ? 'mb-[-15px]' : showProfileAndName ? '' : 'mt-[-15px] ml-[51.65px]'}`}>
                     <div className={`flex flex-row gap-[8px] ${isMine ? 'flex-row-reverse' : ''}`}>
                       <span
-                        className={`mb-[4px] max-w-[208px] rounded-[6px] ${isMine ? 'bg-[#815840] text-white' : 'bg-[#EBE4E0]'} px-[10px] py-[8px] font-light`}
+                        className={`mb-[4px] max-w-[208px] rounded-[6px] break-words whitespace-pre-wrap ${isMine ? 'bg-[#815840] text-white' : 'bg-[#EBE4E0]'} px-[10px] py-[8px] font-light`}
                       >
                         {msg.content}
                       </span>
