@@ -42,28 +42,32 @@ const ChatScreen = () => {
           <div>
             <div key={msg.msgId} className={`px-[20px] py-[8px] ${isMine ? 'justify-end' : 'justify-start'}`}>
               {showDate && (
-                <div className="flex justify-center">
+                <div className={`flex justify-center ${isMine ? 'mb-[5px]' : ''}`}>
                   <span className="mb-[3px] rounded-[1000px] bg-[#ECEEF0] px-[24px] py-[4px] text-center text-[10px] font-normal text-[#6F7173]">
                     {formatDate(msg.sentAt)}
                   </span>
                 </div>
               )}
-              <div className="flex flex-row gap-[10px]">
+              <div className="flex flex-row gap-[8px]">
                 {!isMine && showProfileAndName && (
                   <img src={DefaultProfile} alt={msg.senderName} className="h-[44px] w-[44px] rounded-[6px]" />
                 )}
                 <div className={`flex flex-col text-[12px] ${isMine ? 'ml-auto items-end' : ''}`}>
-                  {!isMine && showProfileAndName && <span className="pt-[1px] font-semibold">{msg.senderName}</span>}
+                  {!isMine && showProfileAndName && (
+                    <span className="align-center flex h-[18px] font-semibold">{msg.senderName}</span>
+                  )}
 
                   <div className={`${isMine ? 'mb-[-15px]' : showProfileAndName ? '' : 'mt-[-15px] ml-[54px]'}`}>
                     <div className={`flex flex-row gap-[8px] ${isMine ? 'flex-row-reverse' : ''}`}>
                       <span
-                        className={`mt-[5px] rounded-[6px] ${isMine ? 'bg-[#815840] text-white' : 'bg-[#EBE4E0]'} px-[10px] py-[8px] font-normal`}
+                        className={`mt-[4px] rounded-[6px] ${isMine ? 'bg-[#815840] text-white' : 'bg-[#EBE4E0]'} px-[10px] py-[8px] font-normal`}
                       >
                         {msg.content}
                       </span>
                       {showTime && (
-                        <span className="mb-[1px] self-end font-normal text-[#888A8C]">{formatTime(msg.sentAt)}</span>
+                        <span className="flex h-[16px] items-center self-end font-normal text-[#888A8C]">
+                          {formatTime(msg.sentAt)}
+                        </span>
                       )}
                     </div>
                   </div>
