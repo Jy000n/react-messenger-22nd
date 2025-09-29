@@ -39,11 +39,11 @@ const ChatScreen = () => {
         const showTime = !nextMsg || nextMsg.senderId !== msg.senderId || !isSameMinute(nextMsg.sentAt, msg.sentAt);
 
         return (
-          <div>
+          <div className="text-[#0B0E0F]">
             <div key={msg.msgId} className={`px-[20px] py-[8px] ${isMine ? 'justify-end' : 'justify-start'}`}>
               {showDate && (
-                <div className={`flex justify-center ${isMine ? 'mb-[5px]' : ''}`}>
-                  <span className="mb-[3px] rounded-[1000px] bg-[#ECEEF0] px-[24px] py-[4px] text-center text-[10px] font-normal text-[#6F7173]">
+                <div className={`flex items-center justify-center`}>
+                  <span className="mb-[12px] flex h-[26px] w-[119px] items-center rounded-[1000px] bg-[#ECEEF0] px-[24px] py-[4px] text-center text-[10px] font-normal whitespace-nowrap text-[#6F7173]">
                     {formatDate(msg.sentAt)}
                   </span>
                 </div>
@@ -54,13 +54,13 @@ const ChatScreen = () => {
                 )}
                 <div className={`flex flex-col text-[12px] ${isMine ? 'ml-auto items-end' : ''}`}>
                   {!isMine && showProfileAndName && (
-                    <span className="align-center flex h-[18px] font-semibold">{msg.senderName}</span>
+                    <span className="align-center mb-[4px] flex h-[18px] font-semibold">{msg.senderName}</span>
                   )}
 
                   <div className={`${isMine ? 'mb-[-15px]' : showProfileAndName ? '' : 'mt-[-15px] ml-[54px]'}`}>
                     <div className={`flex flex-row gap-[8px] ${isMine ? 'flex-row-reverse' : ''}`}>
                       <span
-                        className={`mt-[4px] rounded-[6px] ${isMine ? 'bg-[#815840] text-white' : 'bg-[#EBE4E0]'} px-[10px] py-[8px] font-normal`}
+                        className={`mb-[4px] max-w-[208px] rounded-[6px] ${isMine ? 'bg-[#815840] text-white' : 'bg-[#EBE4E0]'} px-[10px] py-[8px] font-light`}
                       >
                         {msg.content}
                       </span>
