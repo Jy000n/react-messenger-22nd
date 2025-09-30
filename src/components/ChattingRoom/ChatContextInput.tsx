@@ -190,21 +190,9 @@ const ChattingContextInput = () => {
   const [inputValue, setInputValue] = useState('');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  // // 입력될 때마다 높이 자동 조절
-  // const adjustHeight = () => {
-  //   if (textareaRef.current) {
-  //     const textarea = textareaRef.current;
-  //     textarea.style.height = 'auto'; // 먼저 높이 초기화
-  //     // 최소 높이 지정 (1줄 높이)
-  //     const minHeight = 36;
-  //     textarea.style.height = `${Math.max(textarea.scrollHeight, minHeight)}px`;
-  //   }
-  // };
-
   // 입력될 때마다 높이 자동 조절
   const adjustHeight = () => {
     if (!textareaRef.current) return;
-
     const textarea = textareaRef.current;
 
     // CSS box-sizing이 border-box라고 가정
@@ -277,7 +265,7 @@ const ChattingContextInput = () => {
             onChange={handleChange}
             onKeyDown={handleKeyDown}
             placeholder="메세지 입력"
-            className="max-h-[127px] w-full resize-none overflow-hidden rounded-[6px] bg-white px-3 py-2 pr-[40px] leading-[21.15px] outline-none"
+            className="box-border max-h-[127px] w-full resize-none overflow-hidden rounded-[6px] bg-white px-3 py-2 pr-[45px] leading-[21.15px] outline-none"
           />
         </div>
         <img
@@ -292,7 +280,7 @@ const ChattingContextInput = () => {
           src={SendButton}
           alt="전송"
           onClick={handleSend}
-          className="relative bottom-[7px] h-8 w-8 cursor-pointer"
+          className="relative bottom-[8px] h-8 w-8 cursor-pointer"
         />
       )}
     </div>
