@@ -3,6 +3,8 @@ import DefaultProfile from '@/assets/svgs/profile/profileIMG-default.svg';
 import { MY_ID } from '@/type/ChatType.types';
 import { useChat } from '@/hooks/useChat';
 import { formatDate, formatTime } from '@/type/DateType.types';
+import Dropdown from '@/assets/svgs/dropdown/dropdown-down.svg';
+import SeeAll from '@/assets/svgs/dropdown/see-all.svg';
 // import { useScrollbarDrag } from '@/hooks/useScrollbarDrag';
 
 // minutes 일치 비교 (for rendering 채팅메시지)
@@ -103,12 +105,17 @@ const ChatScreen = () => {
                               {msg.content}
                             </div>
 
-                            <div className="mt-[4px] flex">
+                            <div className="mt-[4px] w-full">
                               <button
                                 onClick={() => toggleExpand(msg.msgId)}
-                                className={`w-full text-left ${isMine ? 'bg-[#815840] text-white' : 'bg-[#EBE7E0] text-[#242628]'} mt-[-7px] cursor-pointer rounded-b-[6px] px-[10px] py-[4px] text-[12px]`}
+                                className={`flex h-[26px] w-full items-center justify-between px-[8px] text-left text-[#242628] ${isMine ? 'bg-[#815840] text-white' : 'bg-[#EBE4E0] text-[#242628]'} mt-[-7px] cursor-pointer rounded-b-[6px] px-[10px] py-[4px] text-[12px]`}
                               >
                                 전체보기
+                                <img
+                                  src={isMine ? SeeAll : Dropdown}
+                                  alt="버튼"
+                                  className={` ${isMine ? 'h-[14px] w-[14px]' : 'h-[16px] w-[16px] rotate-270'}`}
+                                />
                               </button>
                             </div>
                           </div>
