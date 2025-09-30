@@ -106,9 +106,10 @@ const ChatScreen = () => {
                             </div>
 
                             <div className="mt-[4px] w-full">
+                              {/* <div className="border-[0.5px] border-[#fff] opacity-[80%]"></div> */}
                               <button
                                 onClick={() => toggleExpand(msg.msgId)}
-                                className={`flex h-[26px] w-full items-center justify-between px-[8px] text-left text-[#242628] ${isMine ? 'bg-[#815840] text-white' : 'bg-[#EBE4E0] text-[#242628]'} mt-[-7px] cursor-pointer rounded-b-[6px] px-[10px] py-[4px] text-[12px]`}
+                                className={`flex h-[26px] w-full items-center justify-between text-left text-[#242628] ${isMine ? 'bg-[#815840] text-white' : 'bg-[#EBE4E0] text-[#242628]'} mt-[-7.5px] cursor-pointer rounded-b-[6px] px-[10px] py-[8px] text-[12px]`}
                               >
                                 전체보기
                                 <img
