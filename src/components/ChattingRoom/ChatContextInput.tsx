@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { MY_ID } from '@/type/ChatType.types';
 import { useChat } from '@/hooks/useChat';
 import InputAddButton from '@/assets/svgs/chat/input-add-button.svg';
@@ -38,7 +39,7 @@ const ChattingContextInput = () => {
     setMessages((prev) => [
       ...prev,
       {
-        msgId: `msg-${Date.now()}`,
+        msgId: `msg-${uuidv4()}`,
         senderId: MY_ID,
         senderName: '나',
         content: inputValue,

@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import DefaultProfile from '@/assets/svgs/profile/profileIMG-default.svg';
+import Dropdown from '@/assets/svgs/drop-down/dropdown.svg';
+import SeeAll from '@/assets/svgs/drop-down/see-all.svg';
 import { MY_ID } from '@/type/ChatType.types';
 import { useChat } from '@/hooks/useChat';
 import { formatDate, formatTime } from '@/type/DateType.types';
-import Dropdown from '@/assets/svgs/dropdown/dropdown-down.svg';
-import SeeAll from '@/assets/svgs/dropdown/see-all.svg';
-// import { useScrollbarDrag } from '@/hooks/useScrollbarDrag';
 
 // minutes 일치 비교 (for rendering 채팅메시지)
 const isSameMinute = (d1: Date, d2: Date) => {
@@ -24,7 +23,10 @@ const ChatScreen = () => {
   // 스크롤 항상 아래로
   useEffect(() => {
     if (containerRef.current) {
-      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+      containerRef.current.scrollTo({
+        top: containerRef.current.scrollHeight,
+        behavior: 'smooth', // 부드러운 스크롤
+      });
     }
   }, [messages]);
 
@@ -106,7 +108,6 @@ const ChatScreen = () => {
                             </div>
 
                             <div className="mt-[4px] w-full">
-                              {/* <div className="border-[0.5px] border-[#fff] opacity-[80%]"></div> */}
                               <button
                                 onClick={() => toggleExpand(msg.msgId)}
                                 className={`flex h-[26px] w-full items-center justify-between text-left text-[#242628] ${isMine ? 'bg-[#815840] text-white' : 'bg-[#EBE4E0] text-[#242628]'} mt-[-7.5px] cursor-pointer rounded-b-[6px] px-[10px] py-[8px] text-[12px]`}
@@ -114,8 +115,8 @@ const ChatScreen = () => {
                                 전체보기
                                 <img
                                   src={isMine ? SeeAll : Dropdown}
-                                  alt="버튼"
-                                  className={` ${isMine ? 'h-[14px] w-[14px]' : 'h-[16px] w-[16px] rotate-270'}`}
+                                  alt="드롭다운"
+                                  className={`${isMine ? 'h-[14px] w-[14px]' : 'h-[16px] w-[16px] -rotate-90'} `}
                                 />
                               </button>
                             </div>
