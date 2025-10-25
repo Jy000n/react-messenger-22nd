@@ -4,7 +4,7 @@ import Settings from '@/assets/svgs/menubar/upper-menubar/settings-black.svg';
 
 const ChattingListHeader = () => {
   return (
-    <div className="mt-[-5px] mb-[10px] flex justify-between px-[20px]">
+    <div className="mt-[-5px] mb-[20px] flex justify-between px-[20px]">
       <div className="text-[20px] font-semibold">채팅</div>
       <div className="flex gap-[12px]">
         <img src={Search} alt="검색" className="h-[24px] w-[24px] cursor-pointer" />

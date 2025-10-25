@@ -1,6 +1,7 @@
 import StatusBar from '../components/MenuBar/StatusBar';
 import ChattingListHeader from '../components/MenuBar/ChattingListHeader';
 import BookmarkChattingList from '../components/ChattingList/BookmarkChattingList';
+import GeneralChatting from '../components/ChattingList/GeneralChatting';
 
 const ChattingList = () => {
   return (
@@ -11,6 +12,7 @@ const ChattingList = () => {
           <ChattingListHeader />
           <div>
             <BookmarkChattingList />
+            <GeneralChatting />
           </div>
         </div>
       </div>
