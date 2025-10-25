@@ -4,9 +4,11 @@ import { formatTimeAMPM } from '@/utils/timeUtils';
 import DropDown from '@/assets/svgs/drop-down/dropdown.svg';
 import ProfileIMGDefault from '@/assets/svgs/profile/profileIMG-default.svg';
 import FavoriteChatting from '@/assets/svgs/profile/favorite-rooms-star.svg';
+import { useChat } from '@/hooks/useChat';
 
 const BookmarkChattingList = () => {
   const navigate = useNavigate();
+  const { roomMessages } = useChat();
   const bookmarkRooms = chatData.filter((room) => room.isFavorite);
 
   return (
@@ -17,30 +19,34 @@ const BookmarkChattingList = () => {
       </div>
 
       <div className="flex flex-col gap-[4px]">
-        {bookmarkRooms.map((room) => (
-          <div
-            key={room.roomId}
-            className="flex cursor-pointer py-[10px]"
-            onClick={() => navigate(`/chat/${room.roomId}`)}
-          >
-            <div className="mr-[12.44px] h-[42px]">
-              <img src={ProfileIMGDefault} alt="친구프로필" className="h-[42px] w-[42px]" />
-            </div>
-            <div className="flex w-[270px] flex-col justify-center">
-              <div className="flex items-center">
-                <div className="flex flex-1 items-center gap-[4px]">
-                  <div className="text-[16px] font-medium">{room.name}</div>
-                  <img src={FavoriteChatting} alt="즐겨찾기" className="relative top-[-1.5px] h-[16px] w-[16px]" />
-                </div>
-                <div className="flex-end text-[10px] text-[#A1A3A5]">
-                  {' '}
-                  {room.messages.length > 0 ? formatTimeAMPM(room.messages[room.messages.length - 1].sentAt) : ''}
-                </div>
+        {bookmarkRooms.map((room) => {
+          const messagess = roomMessages[room.roomId] || [];
+          const lastMessage = messagess.length > 0 ? messagess[messagess.length - 1] : null;
+
+          return (
+            <div
+              key={room.roomId}
+              className="flex cursor-pointer py-[10px]"
+              onClick={() => navigate(`/chat/${room.roomId}`)}
+            >
+              <div className="mr-[12.44px] h-[42px]">
+                <img src={ProfileIMGDefault} alt="친구프로필" className="h-[42px] w-[42px]" />
               </div>
-              <div className="text-[10px] font-normal"> {room.messages[room.messages.length - 1]?.content || ''}</div>
+              <div className="flex w-[270px] flex-col justify-center">
+                <div className="flex items-center">
+                  <div className="flex flex-1 items-center gap-[4px]">
+                    <div className="text-[16px] font-medium">{room.name}</div>
+                    <img src={FavoriteChatting} alt="즐겨찾기" className="relative top-[-1.5px] h-[16px] w-[16px]" />
+                  </div>
+                  <div className="flex-end text-[10px] text-[#A1A3A5]">
+                    {lastMessage ? formatTimeAMPM(lastMessage.sentAt.toISOString()) : ''}{' '}
+                  </div>
+                </div>
+                <div className="text-[10px] font-normal">{lastMessage?.content || ''}</div>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

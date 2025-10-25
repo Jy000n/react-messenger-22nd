@@ -29,7 +29,7 @@ function App() {
     <ChatProvider>
       <Router>
         <div className="flex min-h-screen items-center justify-center">
-          <div className="flex h-[812px] w-[375px] flex-col rounded-[20px] border-[5px] border-[#815840]">
+          <div className="border-[ #815840] flex h-[812px] w-[375px] flex-col rounded-[20px] border-[5px]">
             <div className={`${hideLowerMenubar ? 'flex-1' : 'flex-1 overflow-y-auto'}`}>
               <Routes>
                 <Route path="/" element={renderPage()} />
