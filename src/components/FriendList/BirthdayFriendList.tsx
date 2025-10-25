@@ -15,12 +15,12 @@ const BirthdayProfileList = () => {
           </div>
           <img src={DropDown} alt="드롭다운" className="h-[20px] w-[20px] rotate-180 cursor-pointer" />
         </div>
-        <div className="flex gap-[9px]">
+        <div className="mb-[20px] flex gap-[9px]">
           <div className="w-[43px] flex-col">
             <div className="">
               <img src={ProfileIMGDefault} alt="업데이트프로필" className="cursor-pointer" />
             </div>
-            <div className="mt-[8px] mb-[20px] cursor-pointer text-center text-[10px] font-medium">세오스</div>
+            <div className="mt-[8px] cursor-pointer text-center text-[10px] font-medium">세오스</div>
           </div>
         </div>
       </div>

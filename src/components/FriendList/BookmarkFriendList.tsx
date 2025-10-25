@@ -12,7 +12,7 @@ const BookmarkFriendList = () => {
           <img src={DropDown} alt="드롭다운" className="h-[20px] w-[20px] rotate-180 cursor-pointer" />
         </div>
 
-        <div className="">
+        <div className="mb-[20px]">
           <div className="flex py-[8px]">
             <div className="mr-[12.44px] h-[42px]">
               <img src={ProfileIMGDefault} alt="즐겨찾기프로필" className="h-[42px] w-[42px] cursor-pointer" />
