@@ -1,7 +1,6 @@
 import StatusBar from '../components/MenuBar/StatusBar';
 import ChattingListHeader from '../components/MenuBar/ChattingListHeader';
 import BookmarkChattingList from '../components/ChattingList/BookmarkChattingList';
-import MenuBar from '@/components/MenuBar/CommonLowerMenubar';
 
 const ChattingList = () => {
   return (
@@ -13,9 +12,6 @@ const ChattingList = () => {
           <div>
             <BookmarkChattingList />
           </div>
-        </div>
-        <div className="pb-[20px]">
-          <MenuBar />
         </div>
       </div>
     </>

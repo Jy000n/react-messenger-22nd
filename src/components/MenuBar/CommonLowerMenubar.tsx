@@ -1,11 +1,13 @@
-import { useState } from 'react';
 import { menuItems, type MenuItem } from '@/constants/BottomMenubarItems';
 
-const CommonLowerMenubar = () => {
-  const [active, setActive] = useState(0);
+interface Props {
+  active: number;
+  setActive: (id: number) => void;
+}
 
+const CommonLowerMenubar = ({ active, setActive }: Props) => {
   return (
-    <div className="flex justify-between px-[30px]">
+    <div className="mt-[10px] mb-[20px] flex justify-between px-[30px]">
       {menuItems.map((item: MenuItem) => {
         let iconSrc = item.icon || item.inactiveIcon;
         if (item.activeIcon && item.inactiveIcon) {
