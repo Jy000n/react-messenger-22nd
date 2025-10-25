@@ -15,16 +15,16 @@ const ChattingRoomHeader: React.FC<ChattingRoomHeaderProps> = ({ roomName }) => 
   };
 
   return (
-    <div className="mb-[2px] flex w-full justify-between gap-[10px] px-[20px]">
+    <div className="mb-0.5 flex w-full justify-between gap-2.5 px-5">
       <button onClick={goBack} className="cursor-pointer">
-        <img src={BeforeBtn} alt="before-btn" className="h-[24px] w-[24px]" />
+        <img src={BeforeBtn} alt="before-btn" className="h-6 w-6" />
       </button>
       <div className="absolute left-1/2 -translate-x-1/2 transform">
-        <p className="pt-[1px] text-[16px] font-semibold">{roomName}</p>
+        <div className="title4-sm pt-0.25">{roomName}</div>
       </div>
-      <button className="right-[20px] flex gap-[12px]">
-        <img src={Search} alt="search" className="h-[24px] w-[24px] cursor-pointer" />
-        <img src={MenuHamburger} alt="menu-hamburger" className="h-[24px] w-[24px] cursor-pointer" />
+      <button className="right-5 flex gap-3">
+        <img src={Search} alt="search" className="h-6 w-6 cursor-pointer" />
+        <img src={MenuHamburger} alt="menu-hamburger" className="h-6 w-6 cursor-pointer" />
       </button>
     </div>
   );

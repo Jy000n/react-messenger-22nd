@@ -81,25 +81,25 @@ const ChatScreen: React.FC<ChatScreenProps> = ({ messages }) => {
         const isOverflow = overflowMsgs[msg.msgId] || false;
 
         return (
-          <div className="text-[#0B0E0F]">
+          <div className="">
             <div
               key={msg.msgId}
-              className={`px-[20px] py-[8px] ${isMine ? 'justify-end' : 'justify-start'} ${!isMine && showProfileAndName && prevMsg ? 'mt-[-4px]' : ''}`}
+              className={`px-5 py-2 ${isMine ? 'justify-end' : 'justify-start'} ${!isMine && showProfileAndName && prevMsg ? 'mt-[-4px]' : ''}`}
             >
               {showDate && (
                 <div className={`flex items-center justify-center`}>
-                  <span className="mb-[12px] flex h-[26px] w-[119px] items-center rounded-[1000px] bg-[#ECEEF0] px-[24px] py-[4px] text-center text-[10px] font-normal whitespace-nowrap text-[#6F7173]">
+                  <span className="caption2-reg mb-3 flex h-6.5 w-29.75 items-center rounded-[1000px] bg-[#ECEEF0] px-6 py-1 text-center whitespace-nowrap text-[#6F7173]">
                     {formatDate(msg.sentAt)}
                   </span>
                 </div>
               )}
-              <div className="flex flex-row gap-[8px]">
+              <div className="flex flex-row gap-2">
                 {!isMine && showProfileAndName && (
-                  <img src={DefaultProfile} alt={msg.senderName} className="h-[44px] w-[44px] rounded-[6px]" />
+                  <img src={DefaultProfile} alt={msg.senderName} className="rounded-1.5 h-11 w-11" />
                 )}
-                <div className={`flex flex-col text-[12px] ${isMine ? 'ml-auto items-end' : ''}`}>
+                <div className={`body-sb flex flex-col ${isMine ? 'ml-auto items-end' : ''}`}>
                   {!isMine && showProfileAndName && (
-                    <span className="align-center mb-[4px] flex h-[18px] font-semibold">{msg.senderName}</span>
+                    <span className="align-center mb-1 flex h-4.5">{msg.senderName}</span>
                   )}
 
                   <div
@@ -108,45 +108,49 @@ const ChatScreen: React.FC<ChatScreenProps> = ({ messages }) => {
                     }}
                     className={`${isMine ? 'mb-[-15px]' : showProfileAndName ? '' : 'mt-[-15px] ml-[51.65px]'}`}
                   >
-                    <div className={`flex flex-row gap-[8px] ${isMine ? 'flex-row-reverse' : ''}`}>
+                    <div className={`flex flex-row gap-2 ${isMine ? 'flex-row-reverse' : ''}`}>
                       {isOverflow && !isExpanded ? (
                         <>
                           <div className="items-starts flex flex-col">
                             <div
-                              className={`${!isExpanded ? 'max-h-[280px] overflow-hidden rounded-t-[6px]' : 'rounded-[6px]'} mb-[4px] max-w-[208px] break-words whitespace-pre-wrap ${isMine ? 'bg-[#815840] text-white' : 'bg-[#EBE4E0]'} px-[10px] py-[8px] font-normal`}
+                              className={`body3-reg ${!isExpanded ? 'max-h-70 overflow-hidden rounded-t-[6px]' : 'rounded-[6px]'} mb-1 max-w-52 break-words whitespace-pre-wrap ${isMine ? 'bg-[#815840] text-white' : 'bg-[#EBE4E0]'} px-2.5 py-2`}
                             >
                               {msg.content}
                             </div>
 
-                            <div className="mt-[4px] w-full">
+                            <div className="mt-1 w-full">
                               <button
                                 onClick={() => toggleExpand(msg.msgId)}
-                                className={`flex h-[26px] w-full items-center justify-between text-left text-[#242628] ${isMine ? 'bg-[#815840] text-white' : 'bg-[#EBE4E0] text-[#242628]'} mt-[-7.5px] cursor-pointer rounded-b-[6px] px-[10px] py-[8px] text-[12px]`}
+                                className={`body3-reg flex h-6.5 w-full items-center justify-between text-left ${isMine ? 'bg-[#815840] text-white' : 'bg-main-5 text-[#242628]'} mt-[-7.5px] cursor-pointer rounded-b-[6px] px-2.5 py-2`}
                               >
                                 전체보기
                                 <img
                                   src={isMine ? SeeAll : Dropdown}
                                   alt="드롭다운"
-                                  className={`${isMine ? 'h-[14px] w-[14px]' : 'h-[16px] w-[16px] -rotate-90'} `}
+                                  className={`${isMine ? 'h-3.5 w-3.5' : 'h-4 w-4 -rotate-90'} `}
                                 />
                               </button>
                             </div>
                           </div>
                           {showTime && (
-                            <div className="flex items-end text-[10px] text-[#888A8C]">{formatTime(msg.sentAt)}</div>
+                            <div className="caption1-reg flex items-end" style={{ color: 'var(--color-gray-5)' }}>
+                              {formatTime(msg.sentAt)}
+                            </div>
                           )}
                         </>
                       ) : (
                         <>
                           <div
-                            className={`mb-[4px] max-w-[208px] rounded-[6px] break-words whitespace-pre-wrap ${isMine ? 'bg-[#815840] text-white' : 'bg-[#EBE4E0]'} px-[10px] py-[8px] font-normal`}
+                            className={`body3-reg mb-1 max-w-52 rounded-[6px] break-words whitespace-pre-wrap ${isMine ? 'bg-[#815840] text-white' : 'bg-[#EBE4E0]'} px-2.5 py-2`}
                           >
                             {msg.content}
                           </div>
                           {/* // 전체보기 없을 때는 오른쪽 아래에 시간 */}
                           {showTime && (
                             <div className="mb-[3.5px] flex items-end">
-                              <span className="text-[10px] text-[#888A8C]">{formatTime(msg.sentAt)}</span>
+                              <span className="caption1-reg" style={{ color: 'var(--color-gray-5)' }}>
+                                {formatTime(msg.sentAt)}
+                              </span>
                             </div>
                           )}
                         </>

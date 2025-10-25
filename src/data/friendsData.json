@@ -4,7 +4,7 @@
     "name": "홍길동",
     "profileImage": "",
     "statusMessage": "",
-    "birthday": "1995-10-25",
+    "birthday": "1995-10-26",
     "isFavorite": true,
     "hasUpdatedProfile": false
   },
@@ -31,7 +31,7 @@
     "name": "박민수",
     "profileImage": "",
     "statusMessage": "커피 한 잔의 여유",
-    "birthday": "1992-10-25",
+    "birthday": "1992-10-27",
     "isFavorite": false,
     "hasUpdatedProfile": false
   }

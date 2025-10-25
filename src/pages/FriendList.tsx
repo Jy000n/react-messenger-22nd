@@ -35,7 +35,7 @@ const FriendList: React.FC<FriendListProps> = ({
         <FriendListHeader />
       </div>
       <div className="flex flex-1 flex-grow overflow-y-auto">
-        <div className="w-full flex-col px-[20px] py-[20px]">
+        <div className="w-full flex-col px-5 py-5">
           <div onClick={() => setIsUserProfileOpen(true)}>
             <UserTab />
           </div>

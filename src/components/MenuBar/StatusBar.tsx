@@ -22,16 +22,16 @@ const StatusBar = ({ theme = 'white' }: StatusBarProps) => {
 
   return (
     <>
-      <div className="box-border flex w-full flex-row justify-between p-[16px] pb-[14px]">
-        <div className={`items-center pl-[24px] text-[17px] font-medium`}>
+      <div className="box-border flex w-full flex-row justify-between p-4 pb-3.5">
+        <div className={`items-center pl-6 text-[17px] font-medium`}>
           <p className={theme === 'brown' ? 'text-white' : 'text-black'}>
             {formattedHour}:{formattedMinute}
           </p>
         </div>
-        <div className="flex flex-row items-center justify-center gap-[4px] pr-[10px]">
-          <img src={icons.internet} alt="internet" className="h-[12.23px] w-[19.2px]" />
-          <img src={icons.wifi} alt="wifi" className="h-[12.33px] w-[17.14px]" />
-          <img src={icons.battery} alt="battery" className="h-[13px] w-[27.33px]" />
+        <div className="flex flex-row items-center justify-center gap-1 pr-2.5">
+          <img src={icons.internet} alt="internet" className="h-3.075 w-4.8" />
+          <img src={icons.wifi} alt="wifi" className="h-3.0825 w-4.285" />
+          <img src={icons.battery} alt="battery" className="w-6.8325 h-3.25" />
         </div>
       </div>
     </>

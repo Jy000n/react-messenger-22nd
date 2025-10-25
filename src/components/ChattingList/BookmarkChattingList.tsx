@@ -12,13 +12,13 @@ const BookmarkChattingList = () => {
   const bookmarkRooms = chatData.filter((room) => room.isFavorite);
 
   return (
-    <div className="px-[20px]">
+    <div className="px-5">
       <div className="flex justify-between">
-        <div className="text-[14px] font-medium">즐겨찾기</div>
-        <img src={DropDown} alt="드롭다운" className="h-[20px] w-[20px] rotate-180 cursor-pointer" />
+        <div className="body-med">즐겨찾기</div>
+        <img src={DropDown} alt="드롭다운" className="h-5 w-5 rotate-180 cursor-pointer" />
       </div>
 
-      <div className="flex flex-col gap-[4px]">
+      <div className="flex flex-col gap-1">
         {bookmarkRooms.map((room) => {
           const messagess = roomMessages[room.roomId] || [];
           const lastMessage = messagess.length > 0 ? messagess[messagess.length - 1] : null;
@@ -26,23 +26,23 @@ const BookmarkChattingList = () => {
           return (
             <div
               key={room.roomId}
-              className="flex cursor-pointer py-[10px]"
+              className="flex cursor-pointer py-2.5"
               onClick={() => navigate(`/chat/${room.roomId}`)}
             >
-              <div className="mr-[12.44px] h-[42px]">
-                <img src={ProfileIMGDefault} alt="친구프로필" className="h-[42px] w-[42px]" />
+              <div className="mr-[12.44px] h-13.5">
+                <img src={ProfileIMGDefault} alt="친구프로필" className="h-13.5 w-13.5" />
               </div>
-              <div className="flex w-[270px] flex-col justify-center">
+              <div className="flex w-67.5 flex-col justify-center gap-0.5">
                 <div className="flex items-center">
-                  <div className="flex flex-1 items-center gap-[4px]">
-                    <div className="text-[16px] font-medium">{room.name}</div>
-                    <img src={FavoriteChatting} alt="즐겨찾기" className="relative top-[-1.5px] h-[16px] w-[16px]" />
+                  <div className="flex flex-1 items-center gap-1">
+                    <div className="title4-sm">{room.name}</div>
+                    <img src={FavoriteChatting} alt="즐겨찾기" className="relative top-[-1px] h-4 w-4" />
                   </div>
-                  <div className="flex-end text-[10px] text-[#A1A3A5]">
-                    {lastMessage ? formatTimeAMPM(lastMessage.sentAt.toISOString()) : ''}{' '}
+                  <div className="flex-end caption2-reg" style={{ color: 'var(--color-gray-6)' }}>
+                    {lastMessage ? formatTimeAMPM(lastMessage.sentAt.toISOString()) : ''}
                   </div>
                 </div>
-                <div className="text-[10px] font-normal">{lastMessage?.content || ''}</div>
+                <div className="caption1-reg">{lastMessage?.content || ''}</div>
               </div>
             </div>
           );

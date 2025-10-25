@@ -4,12 +4,12 @@ import Settings from '@/assets/svgs/menubar/upper-menubar/settings-black.svg';
 
 const ChattingListHeader = () => {
   return (
-    <div className="mt-[-5px] mb-[20px] flex justify-between px-[20px]">
-      <div className="text-[20px] font-semibold">채팅</div>
-      <div className="flex gap-[12px]">
-        <img src={Search} alt="검색" className="h-[24px] w-[24px] cursor-pointer" />
-        <img src={AddChatting} alt="채팅추가" className="h-[24px] w-[24px] cursor-pointer" />
-        <img src={Settings} alt="설정" className="h-[24px] w-[24px] cursor-pointer" />
+    <div className="mt-[-5px] mb-5 flex justify-between px-5">
+      <div className="title2-sb">채팅</div>
+      <div className="flex gap-3">
+        <img src={Search} alt="검색" className="h-6 w-6 cursor-pointer" />
+        <img src={AddChatting} alt="채팅추가" className="h-6 w-6 cursor-pointer" />
+        <img src={Settings} alt="설정" className="h-6 w-6 cursor-pointer" />
       </div>
     </div>
   );

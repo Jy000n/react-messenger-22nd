@@ -9,7 +9,7 @@ const Profile = ({ onBack }: { onBack?: () => void }) => {
         <StatusBar theme="brown" />
         <ProfileMenubar onBack={onBack} />
       </div>
-      <div className="pb-[34px]">
+      <div className="pb-8.5">
         <UserProfile />
       </div>
     </div>

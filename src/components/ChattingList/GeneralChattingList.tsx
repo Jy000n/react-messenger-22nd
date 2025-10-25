@@ -11,38 +11,38 @@ const GeneralChattingList = () => {
   const generalRooms = chatData.filter((room) => !room.isFavorite);
 
   return (
-    <div className="px-[20px]">
-      <div className="pt-[5px]">
+    <div className="px-5">
+      <div className="pt-1.25">
         <div className="h-[0.5px] w-full bg-[#373633]/10" />
       </div>
-      <div className="flex justify-between pt-[14px]">
-        <div className="text-[14px] font-medium">일반채팅</div>
-        <img src={DropDown} alt="드롭다운" className="h-[20px] w-[20px] rotate-180 cursor-pointer" />
+      <div className="flex justify-between pt-3.5">
+        <div className="body-med">일반채팅</div>
+        <img src={DropDown} alt="드롭다운" className="h-5 w-5 rotate-180 cursor-pointer" />
       </div>
 
-      <div className="flex flex-col gap-[4px]">
+      <div className="flex flex-col gap-1">
         {generalRooms.map((room) => {
           const messagess = roomMessages[room.roomId] || [];
           const lastMessage = messagess.length > 0 ? messagess[messagess.length - 1] : null;
           return (
             <div
               key={room.roomId}
-              className="flex cursor-pointer py-[10px]"
+              className="flex cursor-pointer py-2.5"
               onClick={() => navigate(`/chat/${room.roomId}`)}
             >
-              <div className="mr-[12.44px] h-[42px]">
-                <img src={ProfileIMGDefault} alt="친구프로필" className="h-[42px] w-[42px]" />
+              <div className="mr-[12.44px] h-13.5">
+                <img src={ProfileIMGDefault} alt="친구프로필" className="h-13.5 w-13.5" />
               </div>
-              <div className="flex w-[270px] flex-col justify-center">
+              <div className="flex w-67.5 flex-col justify-center gap-0.5">
                 <div className="flex items-center">
-                  <div className="flex flex-1 items-center gap-[4px]">
-                    <div className="text-[16px] font-medium">{room.name}</div>
+                  <div className="flex flex-1 items-center gap-1">
+                    <div className="title4-sm">{room.name}</div>
                   </div>
-                  <div className="flex-end text-[10px] text-[#A1A3A5]">
+                  <div className="flex-end caption2-reg" style={{ color: 'var(--color-gray-6)' }}>
                     {lastMessage ? formatTimeAMPM(lastMessage.sentAt.toISOString()) : ''}
                   </div>
                 </div>
-                <div className="text-[10px] font-normal">{lastMessage?.content || ''}</div>
+                <div className="caption1-reg">{lastMessage?.content || ''}</div>
               </div>
             </div>
           );

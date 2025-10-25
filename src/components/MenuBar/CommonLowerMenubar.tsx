@@ -7,7 +7,7 @@ interface Props {
 
 const CommonLowerMenubar = ({ active, setActive }: Props) => {
   return (
-    <div className="mt-[10px] mb-[20px] flex justify-between px-[30px]">
+    <div className="mt-2.5 mb-5 flex justify-between px-7.5">
       {menuItems.map((item: MenuItem) => {
         let iconSrc = item.icon || item.inactiveIcon;
         if (item.activeIcon && item.inactiveIcon) {
@@ -16,9 +16,9 @@ const CommonLowerMenubar = ({ active, setActive }: Props) => {
 
         return (
           <div key={item.id} onClick={() => setActive(item.id)} className="cursor-pointer text-center">
-            <img src={iconSrc} alt={item.label} className="mx-auto h-[24px] w-[24px]" />
+            <img src={iconSrc} alt={item.label} className="mx-auto h-6 w-6" />
             <span
-              className={`text-[10px] ${
+              className={`caption2-reg ${
                 item.activeIcon && item.inactiveIcon && active === item.id ? 'text-[#7F4C2F]' : 'text-[#BABCBE]'
               }`}
             >

@@ -80,9 +80,9 @@ const ChattingContextInput: React.FC<ChattingContextInputProps> = ({ roomId }) =
   }, []);
 
   return (
-    <div className="mt-[4px] flex items-end gap-2 rounded-b-[15.7px] bg-[#EBE4E0] px-[20px] py-[17px]">
-      <div className="relative bottom-[7px] flex h-[36px] w-[36px] items-center justify-center rounded-[6px] bg-white">
-        <img src={InputAddButton} alt="추가" className="h-[15px] w-[15px] cursor-pointer" />
+    <div className="mt-1 flex items-end gap-2 rounded-b-[15.7px] bg-[#EBE4E0] px-5 py-4.25">
+      <div className="relative bottom-1.75 flex h-9 w-9 items-center justify-center rounded-[6px] bg-white">
+        <img src={InputAddButton} alt="추가" className="h-3.75 w-3.75 cursor-pointer" />
       </div>
 
       <div className="relative flex-1">
@@ -99,17 +99,12 @@ const ChattingContextInput: React.FC<ChattingContextInputProps> = ({ roomId }) =
         <img
           src={Imoji}
           alt="이모지"
-          className="absolute right-3 bottom-[1px] h-6 w-6 -translate-y-1/2 cursor-pointer"
+          className="absolute right-3 bottom-0.25 h-6 w-6 -translate-y-1/2 cursor-pointer"
         />
       </div>
 
       {inputValue.trim() && (
-        <img
-          src={SendButton}
-          alt="전송"
-          onClick={handleSend}
-          className="relative bottom-[8px] h-8 w-8 cursor-pointer"
-        />
+        <img src={SendButton} alt="전송" onClick={handleSend} className="relative bottom-2 h-8 w-8 cursor-pointer" />
       )}
     </div>
   );

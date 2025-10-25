@@ -11,30 +11,30 @@ const BookmarkFriendList = () => {
   return (
     <div>
       <div className="h-[0.5px] w-full bg-[#373633]/10" />
-      <div className="pt-[13px]">
+      <div className="pt-3.25">
         <div className="flex justify-between">
-          <div className="mb-[10px] text-[14px] font-medium">즐겨찾기</div>
-          <img src={DropDown} alt="드롭다운" className="h-[20px] w-[20px] rotate-180 cursor-pointer" />
+          <div className="body-med mb-2.5">즐겨찾기</div>
+          <img src={DropDown} alt="드롭다운" className="h-5 w-5 rotate-180 cursor-pointer" />
         </div>
 
-        <div className="mb-[20px]">
+        <div className="mb-5">
           {favoriteFriends.map((friend) => (
-            <div className="flex py-[8px]">
-              <div className="mr-[12.44px] h-[42px]">
+            <div className="flex py-2">
+              <div className="mr-[12.44px] h-10.5">
                 <img
                   src={friend.profileImage || ProfileIMGDefault}
                   alt="즐겨찾기프로필"
-                  className="h-[42px] w-[42px] cursor-pointer"
+                  className="h-10.5 w-10.5 cursor-pointer"
                 />
                 <img
                   src={FavoriteStar}
                   alt="즐겨찾기"
-                  className="relative top-[-44.5px] left-[33.5px] h-[12.442px] w-[12.442px]"
+                  className="w-3.11 relative top-[-44.5px] left-[33.5px] h-[12.442px]"
                 />
               </div>
               <div className="flex flex-col justify-center">
-                <div className="cursor-pointer text-[14px] font-medium">{friend.name}</div>
-                {friend.statusMessage && <div className="text-[10px] font-normal">{friend.statusMessage}</div>}{' '}
+                <div className="body-med cursor-pointer">{friend.name}</div>
+                {friend.statusMessage && <div className="caption2-reg">{friend.statusMessage}</div>}
               </div>
             </div>
           ))}

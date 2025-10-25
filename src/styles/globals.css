@@ -1,8 +1,10 @@
 @import 'tailwindcss';
 @import '@/styles/font.css';
 
-* {
+html,
+body {
   font-family: 'Pretendard', ui-sans-serif, system-ui, sans-serif;
+  color: var(--color-black);
 }
 
 ::-webkit-scrollbar {
@@ -10,19 +12,8 @@
   background: transparent;
 }
 
-/* 전체 스크롤바에 대한 스타일 */
-/* ::-webkit-scrollbar {
-  width: 6px;
-  height: 587px;
-} */
-/* 호버 시 썸 스타일 */
-/* ::-webkit-scrollbar-thumb:hover {
-  background-color: #d9d9d9;
-  border-radius: 12px;
-} */
-
 /* 갈색(1), 상아(2), 고동(3) 주황(4), 연회갈(5) */
-/* @theme {
+:root {
   --color-main-1: #815840;
   --color-main-2: #ffefbe;
   --color-main-3: #5e544e;
@@ -45,66 +36,79 @@
   --color-black: #0b0e0f;
 }
 
-@utility title2-sb {
+.title4-sm {
+  font-size: var(--text-title4-sm);
+  line-height: var(--text-title4-sm--line-height);
+  font-weight: var(--text-title4-sm-font-weight);
+  letter-spacing: var(--text-title4-sm-letter-spacing);
+}
+
+.title2-sb {
   font-size: var(--text-title2-sb);
-  line-height: var(--text-title2-sb);
-  font-weight: var(--text-title2-sb);
-  list-spacing: vr(--text-title2-sb);
-  letter-spacing: vr(--text-title2-sb);
+  line-height: var(--text-title2-sb--line-height);
+  font-weight: var(--text-title2-sb--font-weight);
+  letter-spacing: var(--text-title2-sb--letter-spacing);
 }
 
-@utility title1-sb {
+.title1-sb {
   font-size: var(--text-title1-sb);
-  line-height: var(--text-title1-sb);
-  font-weight: var(--text-title1-sb);
-  list-spacing: vr(--text-title1-sb);
-  letter-spacing: vr(--text-title1-sb);
+  line-height: var(--text-title1-sb--line-height);
+  font-weight: var(--text-title1-sb--font-weight);
+  letter-spacing: var(--text-title1-sb--letter-spacing);
 }
 
-@utility title-sb {
+.title-sb {
   font-size: var(--text-title-sb);
-  line-height: var(--text-title-sb);
-  font-weight: var(--text-title-sb);
-  list-spacing: vr(--text-title-sb);
-  letter-spacing: vr(--text-title-sb);
+  line-height: var(--text-title-sb--line-height);
+  font-weight: var(--text-title-sb--font-weight);
+  letter-spacing: var(--text-title-sb--letter-spacing);
 }
 
-@utility body-med {
+.body-med {
   font-size: var(--text-body-med);
-  line-height: var(--text-body-med);
-  font-weight: var(--text-body-med);
-  list-spacing: vr(--text-body-med);
-  letter-spacing: vr(--text-body-med);
+  line-height: var(--text-body-med--line-height);
+  font-weight: var(--text-body-med--font-weight);
+  letter-spacing: var(--text-body-med--letter-spacing);
 }
 
-@utility body-sb {
+.body1-med {
+  font-size: var(--text-body1-med);
+  line-height: var(--text-body1-med--line-height);
+  font-weight: var(--text-body1-med--font-weight);
+  --letter-spacing: var(text-body1-med--letter-spacing);
+}
+
+.body-sb {
   font-size: var(--text-body-sb);
-  line-height: var(-text-body-sb);
-  font-weight: var(--text-body-sb);
-  list-spacing: vr(--text-body-sb);
-  letter-spacing: vr(--text-body-sb);
+  line-height: var(--text-body-sb--line-height);
+  font-weight: var(--text-body-sb--font-weight);
+  letter-spacing: var(--text-body-sb--letter-spacing);
 }
 
-@utility body-reg {
+.body-reg {
   font-size: var(--text-body-reg);
-  line-height: var(--text-body-reg);
-  font-weight: var(--text-body-reg);
-  list-spacing: vr(--text-body-reg);
-  letter-spacing: vr(--text-body-reg);
+  line-height: var(--text-body-reg--line-height);
+  font-weight: var(--text-body-reg--font-weight);
+  letter-spacing: var(--text-body-reg--letter-spacing);
 }
 
-@utility caption1-reg {
+.body3-reg {
+  font-size: var(--text-body-reg3);
+  line-height: var(--text-body-reg3--line-height);
+  font-weight: var(--text-body-reg3--font-weight);
+  letter-spacing: var(--text-body-reg3--letter-spacing);
+}
+
+.caption1-reg {
   font-size: var(--text-caption1-reg);
-  line-height: var(--text-caption1-reg);
-  font-weight: var(--text-caption1-reg);
-  list-spacing: vr(--text-caption1-reg);
-  letter-spacing: vr(--text-caption1-reg);
+  line-height: var(--text-caption1-reg--line-height);
+  font-weight: var(--text-caption1-reg--font-weight);
+  letter-spacing: var(--text-caption1-reg--letter-spacing);
 }
 
-@utility caption2-reg {
+.caption2-reg {
   font-size: var(--text-caption2-reg);
-  line-height: var(--text-caption2-reg);
-  font-weight: var(--text-caption2-reg);
-  list-spacing: vr(--text-caption2-reg);
-  letter-spacing: vr(--text-caption2-reg);
-} */
+  line-height: var(--text-caption2-reg--line-height);
+  font-weight: var(--text-caption2-reg--font-weight);
+  letter-spacing: var(--text-caption2-reg--letter-spacing);
+}

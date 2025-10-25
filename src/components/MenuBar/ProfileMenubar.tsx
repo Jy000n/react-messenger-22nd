@@ -6,7 +6,7 @@ import Settings from '@/assets/svgs/menubar/upper-menubar/settings-white.svg';
 const ProfileMenubar = ({ onBack }: { onBack?: () => void }) => {
   return (
     <>
-      <div className="flex justify-between px-[20px]">
+      <div className="flex justify-between px-5">
         <img src={BeforeBtn} alt="before-btn" className="cursor-pointer" onClick={onBack} />
         <div className="flex gap-[10px]">
           <img src={Shopping} alt="shopping" className="cursor-pointer" />
