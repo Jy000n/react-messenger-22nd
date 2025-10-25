@@ -9,7 +9,15 @@ import BookmarkFriendList from '@/components/FriendList/BookmarkFriendList';
 import FriendsList from '@/components/FriendList/FriendsList';
 import Profile from '@/pages/Profile';
 
-const FriendList = ({ setHideLowerMenubar }: { setHideLowerMenubar: (hide: boolean) => void }) => {
+interface FriendListProps {
+  setHideLowerMenubar: (hide: boolean) => void;
+}
+
+const FriendList: React.FC<FriendListProps> = ({
+  setHideLowerMenubar,
+}: {
+  setHideLowerMenubar: (hide: boolean) => void;
+}) => {
   const [isUserProfileOpen, setIsUserProfileOpen] = useState(false);
 
   useEffect(() => {
@@ -22,7 +30,7 @@ const FriendList = ({ setHideLowerMenubar }: { setHideLowerMenubar: (hide: boole
 
   return (
     <div className="flex h-full flex-col overflow-auto">
-      <div>
+      <div className="flex-shrink-0">
         <StatusBar />
         <FriendListHeader />
       </div>

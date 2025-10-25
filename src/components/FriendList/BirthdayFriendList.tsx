@@ -1,7 +1,20 @@
 import DropDown from '@/assets/svgs/drop-down/dropdown.svg';
 import ProfileIMGDefault from '@/assets/svgs/profile/profileIMG-default.svg';
+import friendsData from '@/data/friendsData.json';
 
 const BirthdayProfileList = () => {
+  // 오늘 날짜 (월, 일)
+  const today = new Date();
+  const todayMonthDay = `${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+
+  // 생일자
+  const birthdayFriends = friendsData.filter((friend) => {
+    const friendBirthday = friend.birthday.slice(5); // "MM-DD" 추출
+    return friendBirthday === todayMonthDay;
+  });
+
+  if (birthdayFriends.length === 0) return null;
+
   return (
     <div>
       <div className="h-[0.5px] w-full bg-[#373633]/10" />
@@ -15,13 +28,16 @@ const BirthdayProfileList = () => {
           </div>
           <img src={DropDown} alt="드롭다운" className="h-[20px] w-[20px] rotate-180 cursor-pointer" />
         </div>
+
         <div className="mb-[20px] flex gap-[9px]">
-          <div className="w-[43px] flex-col">
-            <div className="">
-              <img src={ProfileIMGDefault} alt="업데이트프로필" className="cursor-pointer" />
+          {birthdayFriends.map((friend) => (
+            <div key={friend.userId} className="w-[43px] flex-col">
+              <div className="">
+                <img src={friend.profileImage || ProfileIMGDefault} alt="업데이트프로필" className="cursor-pointer" />
+              </div>
+              <div className="mt-[8px] cursor-pointer text-center text-[10px] font-medium">{friend.name}</div>
             </div>
-            <div className="mt-[8px] cursor-pointer text-center text-[10px] font-medium">세오스</div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
