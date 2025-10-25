@@ -3,7 +3,6 @@ import DefaultProfile from '@/assets/svgs/profile/profileIMG-default.svg';
 import Dropdown from '@/assets/svgs/drop-down/dropdown.svg';
 import SeeAll from '@/assets/svgs/drop-down/see-all.svg';
 import { MY_ID } from '@/type/ChatType.types';
-import { useChat } from '@/hooks/useChat';
 import { formatDate, formatTime } from '@/type/DateType.types';
 
 // minutes 일치 비교 (for rendering 채팅메시지)
@@ -13,8 +12,20 @@ const isSameMinute = (d1: Date, d2: Date) => {
 
 const MAX_MSG_HEIGHT = 288;
 
-const ChatScreen = () => {
-  const { messages } = useChat();
+interface MessageType {
+  msgId: string;
+  senderId: string;
+  senderName: string;
+  content: string;
+  type: string;
+  sentAt: Date;
+}
+
+interface ChatScreenProps {
+  messages: MessageType[];
+}
+
+const ChatScreen: React.FC<ChatScreenProps> = ({ messages }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const msgRefs = useRef<Record<string, HTMLDivElement>>({});
   const [expandedMsgs, setExpandedMsgs] = useState<Record<string, boolean>>({});
@@ -47,7 +58,7 @@ const ChatScreen = () => {
   };
 
   return (
-    <div ref={containerRef} className="box-border h-[calc(100vh-100px)] overflow-y-auto">
+    <div ref={containerRef} className="box-border h-full overflow-y-auto">
       {messages.map((msg, idx) => {
         const isMine = msg.senderId === MY_ID;
         const prevMsg = idx > 0 ? messages[idx - 1] : null;

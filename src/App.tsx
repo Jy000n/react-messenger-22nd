@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ChatProvider } from './context/ChatContext';
 import FriendList from './pages/FriendList';
 import ChattingList from './pages/ChattingList';
-import { ChatProvider } from './context/ChatContext';
 import CommonLowerMenubar from './components/MenuBar/CommonLowerMenubar';
+import ChattingRoom from './pages/ChattingRoom';
 
 function App() {
   const [activeMenu, setActiveMenu] = useState(0);
@@ -25,12 +27,19 @@ function App() {
   };
   return (
     <ChatProvider>
-      <div className="flex min-h-screen items-center justify-center">
-        <div className="flex h-[812px] w-[375px] flex-col rounded-[20px] border-[5px] border-[#815840]">
-          <div className={`${hideLowerMenubar ? 'flex-1' : 'flex-1 overflow-y-auto'}`}>{renderPage()}</div>
-          {!hideLowerMenubar && <CommonLowerMenubar active={activeMenu} setActive={setActiveMenu} />}
+      <Router>
+        <div className="flex min-h-screen items-center justify-center">
+          <div className="flex h-[812px] w-[375px] flex-col rounded-[20px] border-[5px] border-[#815840]">
+            <div className={`${hideLowerMenubar ? 'flex-1' : 'flex-1 overflow-y-auto'}`}>
+              <Routes>
+                <Route path="/" element={renderPage()} />
+                <Route path="/chat/:roomId" element={<ChattingRoom setHideLowerMenubar={setHideLowerMenubar} />} />
+              </Routes>
+            </div>
+            {!hideLowerMenubar && <CommonLowerMenubar active={activeMenu} setActive={setActiveMenu} />}
+          </div>
         </div>
-      </div>
+      </Router>
     </ChatProvider>
   );
 }

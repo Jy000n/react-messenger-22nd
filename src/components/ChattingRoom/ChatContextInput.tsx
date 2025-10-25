@@ -6,8 +6,12 @@ import InputAddButton from '@/assets/svgs/chat/input-add-button.svg';
 import Imoji from '@/assets/svgs/chat/imoji.svg';
 import SendButton from '@/assets/svgs/chat/send-button.svg';
 
-const ChattingContextInput = () => {
-  const { setMessages } = useChat();
+interface ChattingContextInputProps {
+  roomId: string;
+}
+
+const ChattingContextInput: React.FC<ChattingContextInputProps> = ({ roomId }) => {
+  const { setRoomMessages } = useChat();
   const [inputValue, setInputValue] = useState('');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -36,17 +40,21 @@ const ChattingContextInput = () => {
   const handleSend = () => {
     if (!inputValue.trim()) return;
 
-    setMessages((prev) => [
+    // 해당 roomId의 메시지에 추가
+    setRoomMessages((prev) => ({
       ...prev,
-      {
-        msgId: `msg-${uuidv4()}`,
-        senderId: MY_ID,
-        senderName: '나',
-        content: inputValue,
-        type: 'text',
-        sentAt: new Date(),
-      },
-    ]);
+      [roomId]: [
+        ...(prev[roomId] || []),
+        {
+          msgId: `msg-${uuidv4()}`,
+          senderId: MY_ID,
+          senderName: '나',
+          content: inputValue,
+          type: 'text' as const,
+          sentAt: new Date(),
+        },
+      ],
+    }));
 
     setInputValue('');
     if (textareaRef.current) {

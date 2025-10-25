@@ -1,15 +1,26 @@
+import { useNavigate } from 'react-router-dom';
 import BeforeBtn from '@/assets/svgs/menubar/upper-menubar/before-arrow-button-black.svg';
 import Search from '@/assets/svgs/menubar/upper-menubar/search.svg';
 import MenuHamburger from '@/assets/svgs/menubar/upper-menubar/menu-hamburger.svg';
 
-const ChattingRoomHeader = () => {
+interface ChattingRoomHeaderProps {
+  roomName: string;
+}
+
+const ChattingRoomHeader: React.FC<ChattingRoomHeaderProps> = ({ roomName }) => {
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="mb-[2px] flex w-full justify-between gap-[10px] px-[20px]">
-      <button className="cursor-pointer">
+      <button onClick={goBack} className="cursor-pointer">
         <img src={BeforeBtn} alt="before-btn" className="h-[24px] w-[24px]" />
       </button>
       <div className="absolute left-1/2 -translate-x-1/2 transform">
-        <p className="pt-[1px] text-[16px] font-semibold">세오스</p>
+        <p className="pt-[1px] text-[16px] font-semibold">{roomName}</p>
       </div>
       <button className="right-[20px] flex gap-[12px]">
         <img src={Search} alt="search" className="h-[24px] w-[24px] cursor-pointer" />
