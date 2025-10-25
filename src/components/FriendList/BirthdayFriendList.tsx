@@ -1,8 +1,12 @@
-import DropDown from '@/assets/svgs/drop-down/dropdown.svg';
+import { useState } from 'react';
+import Dropdown from '@/components/common/Dropdown';
 import ProfileIMGDefault from '@/assets/svgs/profile/profileIMG-default.svg';
 import friendsData from '@/data/friendsData.json';
 
 const BirthdayProfileList = () => {
+  const [isOpen, setIsOpen] = useState(true);
+  const toggleDropdown = () => setIsOpen((prev) => !prev);
+
   // 오늘 날짜 (월, 일)
   const today = new Date();
   const todayMonthDay = `${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
@@ -26,19 +30,21 @@ const BirthdayProfileList = () => {
               더보기
             </div>
           </div>
-          <img src={DropDown} alt="드롭다운" className="h-5 w-5 rotate-180 cursor-pointer" />
+          <Dropdown isOpen={isOpen} onClick={toggleDropdown} />
         </div>
 
-        <div className="mb-5 flex gap-2.25">
-          {birthdayFriends.map((friend) => (
-            <div key={friend.userId} className="w-10.75 flex-col">
-              <div className="">
-                <img src={friend.profileImage || ProfileIMGDefault} alt="업데이트프로필" className="cursor-pointer" />
+        {isOpen && (
+          <div className="mb-5 flex gap-2.25">
+            {birthdayFriends.map((friend) => (
+              <div key={friend.userId} className="w-10.75 flex-col">
+                <div className="">
+                  <img src={friend.profileImage || ProfileIMGDefault} alt="업데이트프로필" className="cursor-pointer" />
+                </div>
+                <div className="caption2-reg mt-[8px] cursor-pointer text-center">{friend.name}</div>
               </div>
-              <div className="caption2-reg mt-[8px] cursor-pointer text-center">{friend.name}</div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
